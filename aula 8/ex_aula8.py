@@ -11,15 +11,16 @@ c) a % de alunos reprovados, considerando media < 4
 '''
 
 alunos = {}
+
 import random
 
 for i in range(2):
     matricula = int(input('Digite o número de matrícula: '))
     nome = input('Digite o nome do aluno: ')
     notas = [random.randint(0, 10) for _ in range(4)]
-    alunos[matricula] = nome, notas
+    media = sum(notas) / 4
+    alunos[matricula] = nome, notas, media
+    print(f'media do aluno {nome} é: {media}')
 
-soma = sum(notas)
 
 print(alunos)
-print(soma)
